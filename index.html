@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker and Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-section">
+        <h1 id="auth-title">Sign Up</h1>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="contact" placeholder="Contact" required>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="auth-button">Sign Up</button>
+        <p id="toggle-auth">Already have an account? <span id="toggle-link">Login</span></p>
+    </div>
+    <div id="welcome-section" style="display: none;">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <div id="budget-section">
+            <h3>Set Budget</h3>
+            <input type="number" id="budget-input" placeholder="Enter Budget">
+            <button onclick="setBudget('fresh')">Set Budget</button>
+            <button onclick="setBudget('add')">Add to Budget</button>
+            <p id="budget-display"></p>
+            <p id="remaining-budget"></p>
+        </div>
+        <div id="expense-section">
+            <h3>Add Expense</h3>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <select id="expense-category">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Entertainment">Entertainment</option>
+            </select>
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+        <div id="expenses-section">
+            <h3>Your Expenses</h3>
+            <ul id="expense-list"></ul>
+            <ul id="all-expenses-list"></ul>
+            <button id="generate-pdf-button">Generate PDF Report</button>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
