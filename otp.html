@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - 2FA</title>
+    <link rel="stylesheet" href="otp.css">
+</head>
+<body>
+    <header>
+        <h1>Verify OTP</h1>
+    </header>
+    <div class="container">
+        <h2>Enter OTP</h2>
+        <form id="otp-form" action="verify_otp.php" method="POST">
+            <table>
+                <tr>
+                    <td><label for="otp">OTP:</label></td>
+                    <td><input type="text" name="otp" id="otp" placeholder="Enter OTP" required></td>
+                </tr>
+            </table>
+            <button type="submit" class="auth-button">Verify OTP</button>
+        </form>
+        <p style="text-align: center;">Didn’t receive the OTP? <a href="#">Resend</a></p>
+    </div>
+</body>
+</html>
